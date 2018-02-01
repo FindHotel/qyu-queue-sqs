@@ -1,4 +1,4 @@
-require 'aws-sdk'
+require 'aws-sdk-sqs'
 require 'json'
 
 module Qyu

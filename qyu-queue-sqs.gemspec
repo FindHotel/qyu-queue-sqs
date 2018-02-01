@@ -36,5 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.5"
   spec.add_development_dependency 'simplecov'
 
-  spec.add_runtime_dependency 'aws-sdk', '~> 2'
+  spec.add_runtime_dependency 'aws-sdk-sqs', '~> 1.3'
 end
