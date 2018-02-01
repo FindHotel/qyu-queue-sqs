@@ -1,6 +1,6 @@
-RSpec.describe Qyu::Queue::Sqs do
+RSpec.describe Qyu::Queue::SQS do
   it "has a version number" do
-    expect(Qyu::Queue::Sqs::VERSION).not_to be nil
+    expect(Qyu::Queue::SQS::VERSION).not_to be nil
   end
 
   it "does something useful" do
