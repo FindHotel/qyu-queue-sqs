@@ -1,5 +1,6 @@
 require 'aws-sdk-sqs'
 require 'json'
+require_relative '../sqs'
 
 module Qyu
   module Queue
