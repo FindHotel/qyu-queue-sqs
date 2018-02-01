@@ -119,10 +119,5 @@ module Qyu
   end
 end
 
-if defined?(Qyu::Config::MessageQueue)
-  Qyu::Config::MessageQueue.register(Qyu::Queue::SQS::Adapter)
-end
-
-if defined?(Qyu::Factory::MessageQueue)
-  Qyu::Factory::MessageQueue.register(Qyu::Queue::SQS::Adapter)
-end
+Qyu::Config::QueueConfig.register(Qyu::Queue::SQS::Adapter) if defined?(Qyu::Config::QueueConfig)
+Qyu::Factory::QueueFactory.register(Qyu::Queue::SQS::Adapter) if defined?(Qyu::Factory::QueueFactory)
