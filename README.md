@@ -1,8 +1,11 @@
 # Qyu::Queue::SQS
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/qyu/queue/sqs`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://img.shields.io/gem/v/qyu-queue-sqs.svg)](https://rubygems.org/gems/qyu-queue-sqs)
+[![Build Status](https://travis-ci.org/FindHotel/qyu-queue-sqs.svg)](https://travis-ci.org/FindHotel/qyu-queue-sqs)
 
-TODO: Delete this and the text above, and describe your gem
+## Requirements:
+
+* Ruby 2.4.0 or newer
 
 ## Installation
 
@@ -19,6 +22,35 @@ And then execute:
 Or install it yourself as:
 
     $ gem install qyu-queue-sqs
+
+## Configuration
+
+To start using Qyu; you need a queue configuration and a state store configuration. Here's an example:
+```ruby
+require 'qyu'
+require 'qyu/queue/sqs'
+
+Qyu.configure(
+  queue: {
+    type: :sqs,
+    region: aws_region,
+    access_key_id: aws_access_key_id,
+    secret_access_key: aws_secret_access_key,
+    queue_prefix: queue_prefix, # example: production
+    # Optional
+    message_retention_period: 1_209_600,
+    message_visibility_timeout: 300,
+    maximum_message_size: 262_144
+  },
+  store: {
+    type: :memory
+    # Or one of the other production-ready queues available
+    # Check https://github.com/FindHotel/qyu/wiki/State-Stores
+  },
+  # optional Defaults to STDOUT
+  logger: Logger.new(STDOUT)
+)
+```
 
 ## Usage
 
