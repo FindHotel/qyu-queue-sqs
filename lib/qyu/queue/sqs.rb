@@ -9,7 +9,7 @@ module Qyu
 
       class << self
         def interface
-          defined?(ArcYu::MessageQueue::Base) ? ArcYu::MessageQueue::Base : Object
+          defined?(Qyu::MessageQueue::Base) ? Qyu::MessageQueue::Base : Object
         end
       end
     end
