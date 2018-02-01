@@ -1,8 +1,8 @@
 require 'logger'
 
 module Qyu
-  module Store
-    module ActiveRecord
+  module Queue
+    module SQS
       class Logger < ::Logger
       end
     end
