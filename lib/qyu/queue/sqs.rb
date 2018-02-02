@@ -27,3 +27,6 @@ module Qyu
     end
   end
 end
+
+Qyu::Config::QueueConfig.register(Qyu::Queue::SQS::Adapter) if defined?(Qyu::Config::QueueConfig)
+Qyu::Factory::QueueFactory.register(Qyu::Queue::SQS::Adapter) if defined?(Qyu::Factory::QueueFactory)
